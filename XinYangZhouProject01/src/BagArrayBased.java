@@ -1,12 +1,12 @@
 import java.util.Random;
 
 /**
- * The Bag class of the ADTBag
+ * The BagArrayBased class of the ADTBag
  * 
  * @author XinYang Zhou
  * @version 1.0
  */
-public class Bag implements BagInterface {
+public class BagArrayBased implements BagInterface {
     /**
      * The list to store datas
      */
@@ -25,7 +25,7 @@ public class Bag implements BagInterface {
     /**
      * Create an empty bag that can hold up to 100 items.
      */
-    public Bag() {
+    public BagArrayBased() {
         bag = new Object[MAXNUM];
         size = 0;
     }
@@ -42,9 +42,9 @@ public class Bag implements BagInterface {
                 bag[size] = item;
                 size++;
             } else {
-                throw new ArrayFullException("Array is full.");
+                throw new BagOutOfBoundsException("Array is full.");
             }
-        } catch (ArrayFullException e) {
+        } catch (BagOutOfBoundsException e) {
             e.printStackTrace();
             System.out.println();
         } catch (Exception e) {

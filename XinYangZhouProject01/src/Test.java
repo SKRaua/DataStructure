@@ -15,7 +15,7 @@ public class Test {
      */
     public static void start() throws FileNotFoundException {
         // Create an empty bag and save the reference.
-        Bag bag = new Bag();
+        BagArrayBased bag = new BagArrayBased();
 
         // Pass the reference to create method that fills the bag.
         create(bag);
@@ -61,7 +61,7 @@ public class Test {
      * @throws FileNotFoundException "./XinYangZhouProject01/src/items.txt"
      *                               can't be found
      */
-    public static void create(Bag bag) throws FileNotFoundException {
+    public static void create(BagArrayBased bag) throws FileNotFoundException {
         Scanner input = new Scanner(new File("./XinYangZhouProject01/src/items.txt"));
         // Create items.
         while (input.hasNextLine()) {
@@ -72,7 +72,7 @@ public class Test {
     /**
      * Display the items of the bag.
      */
-    public static void display(Bag bag) {
+    public static void display(BagArrayBased bag) {
         // Display the items.
         for (int i = 0; i < bag.size(); i++) {
             System.out.println(bag.get(i));
