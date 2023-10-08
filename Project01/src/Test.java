@@ -62,7 +62,7 @@ public class Test {
      *                               can't be found
      */
     public static void create(BagArrayBased bag) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("./XinYangZhouProject01/src/items.txt"));
+        Scanner input = new Scanner(new File("./Project01/src/items.txt"));
         // Create items.
         while (input.hasNextLine()) {
             bag.insert(input.nextLine());
