@@ -58,7 +58,7 @@ public class Test {
      * Create items using data from an input file.
      * 
      * @param bag The bag to store items
-     * @throws FileNotFoundException "./XinYangZhouProject01/src/items.txt"
+     * @throws FileNotFoundException "./Project01/src/items.txt"
      *                               can't be found
      */
     public static void create(BagArrayBased bag) throws FileNotFoundException {
