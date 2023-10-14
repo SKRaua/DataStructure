@@ -4,7 +4,7 @@
  * @author XinyangZhou
  * @version 1.0
  */
-public class LinkedString implements LinkedStringinterface {
+public class LinkedString implements LinkedStringInterface {
 
     /**
      * The reference node of the head
@@ -84,7 +84,7 @@ public class LinkedString implements LinkedStringinterface {
      * @param index The index of the char
      * @return The char at the index
      */
-    public char charAt(int index) {
+    public char charAt(int index) throws IndexOutOfBoundsException {
         if (index < 0 || index >= this.count) {
             throw new IndexOutOfBoundsException("Index is out of bounds.");
         }
@@ -167,7 +167,7 @@ public class LinkedString implements LinkedStringinterface {
      * @param endIndex   The end index of the subString
      * @return A portion of a string
      */
-    public LinkedString subString(int startIndex, int endIndex) {
+    public LinkedString subString(int startIndex, int endIndex) throws IndexOutOfBoundsException {
         if (startIndex < 0 || endIndex >= this.count || startIndex > endIndex) {
             throw new IndexOutOfBoundsException("Invalid startIndex or endIndex.");
         }

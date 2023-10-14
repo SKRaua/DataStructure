@@ -42,9 +42,9 @@ public class BagArrayBased implements BagInterface {
                 bag[size] = item;
                 size++;
             } else {
-                throw new BagOutOfBoundsException("Array is full.");
+                throw new BagException("Array is full.");
             }
-        } catch (BagOutOfBoundsException e) {
+        } catch (BagException e) {
             e.printStackTrace();
             System.out.println();
         } catch (Exception e) {
@@ -64,9 +64,9 @@ public class BagArrayBased implements BagInterface {
                 bag[size - 1] = null;
                 size--;
             } else {
-                throw new NoItemsException("There are no items in the array.");
+                throw new BagException("There are no items in the array.");
             }
-        } catch (NoItemsException e) {
+        } catch (BagException e) {
             e.printStackTrace();
             System.out.println();
         } catch (Exception e) {
@@ -92,9 +92,9 @@ public class BagArrayBased implements BagInterface {
                 }
                 size--;
             } else {
-                throw new NoItemsException("There are no items in the array.");
+                throw new BagException("There are no items in the array.");
             }
-        } catch (NoItemsException e) {
+        } catch (BagException e) {
             e.printStackTrace();
             System.out.println();
         } catch (Exception e) {
@@ -110,18 +110,14 @@ public class BagArrayBased implements BagInterface {
      * @return the index of the item
      */
     public int get(Object item) {
-        if (size != 0) {
-            for (int i = 0; i < size; i++) {
-                // Find this item in the bag.
-                if (bag[i].equals(item)) {
-                    return i;
-                }
+        for (int i = 0; i < size; i++) {
+            // Find this item in the bag.
+            if (bag[i].equals(item)) {
+                return i;
             }
-            // Item not found.
-            return -1;
-        } else {
-            return -1;
         }
+        // Item not found.
+        return -1;
     }
 
     /**
@@ -130,8 +126,12 @@ public class BagArrayBased implements BagInterface {
      * @param index The item's index
      * @return the item
      */
-    public Object get(int index) {
-        return bag[index];
+    public Object get(int index) throws BagIndexOutOfBoundsException {
+        if (index < 0 || index >= this.size) {
+            throw new BagIndexOutOfBoundsException("Index out of bounds.");
+        } else {
+            return bag[index];
+        }
     }
 
     /**

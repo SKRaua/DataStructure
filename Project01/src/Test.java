@@ -19,6 +19,7 @@ public class Test {
 
         // Pass the reference to create method that fills the bag.
         create(bag);
+
         // Pass the reference to display method that prints the bag.
         display(bag);
 
@@ -44,14 +45,13 @@ public class Test {
         System.out.println("The bag is empty: " + bag.isEmpty());
         display(bag);
 
-        // NoItemsException in remove methods
+        // BagException in remove methods
         bag.removeLast();
         bag.removeRandom();
-        // ArrayFullException in insert method
+        // BagException in insert method
         for (int i = 0; i < 101; i++) {
             bag.insert("1");
         }
-
     }
 
     /**
@@ -62,7 +62,7 @@ public class Test {
      *                               can't be found
      */
     public static void create(BagArrayBased bag) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("./Project01/src/items.txt"));
+        Scanner input = new Scanner(new File("items.txt"));
         // Create items.
         while (input.hasNextLine()) {
             bag.insert(input.nextLine());
@@ -78,7 +78,6 @@ public class Test {
             System.out.println(bag.get(i));
         }
         System.out.println("");
-
     }
 
 }

@@ -35,7 +35,7 @@ public class Test {
      * @throws FileNotFoundException File not found
      */
     public static void create(ArrayList<LinkedString> array) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("./Project02/src/items.txt"));
+        Scanner input = new Scanner(new File("items.txt"));
         // Reads the next token from the input file
         while (input.hasNextLine()) {
             // Creates a linked string from the input and add it to the array list.

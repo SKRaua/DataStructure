@@ -4,7 +4,7 @@
  * @author XinyangZhou
  * @version 1.0
  */
-public interface LinkedStringinterface {
+public interface LinkedStringInterface {
 
     /**
      * Returns the char at the index.
