@@ -1,3 +1,5 @@
+package linkedString;
+
 /**
  * The interface of the LinkedString class
  * 

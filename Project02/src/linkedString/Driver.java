@@ -1,3 +1,5 @@
+package linkedString;
+
 import java.io.FileNotFoundException;
 
 /**

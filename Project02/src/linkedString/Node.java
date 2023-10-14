@@ -1,3 +1,5 @@
+package linkedString;
+
 /**
  * The Node class for LinkedString
  * 

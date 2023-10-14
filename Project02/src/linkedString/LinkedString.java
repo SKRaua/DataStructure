@@ -1,3 +1,5 @@
+package linkedString;
+
 /**
  * Operations of a linked string
  * 

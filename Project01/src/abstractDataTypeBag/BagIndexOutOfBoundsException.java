@@ -1,3 +1,4 @@
+package abstractDataTypeBag;
 /**
  * BagIndexOutOfBoundsException class
  * 
@@ -6,7 +7,7 @@
  */
 public class BagIndexOutOfBoundsException extends IndexOutOfBoundsException {
 
-    /**
+	/**
      * A constructor of BagIndexOutOfBoundsException with a message.
      * 
      * @param message The message of the BagIndexOutOfBoundsException

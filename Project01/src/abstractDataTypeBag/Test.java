@@ -1,3 +1,5 @@
+package abstractDataTypeBag;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -58,8 +60,7 @@ public class Test {
      * Create items using data from an input file.
      * 
      * @param bag The bag to store items
-     * @throws FileNotFoundException "./Project01/src/items.txt"
-     *                               can't be found
+     * @throws FileNotFoundException "items.txt" can't be found
      */
     public static void create(BagArrayBased bag) throws FileNotFoundException {
         Scanner input = new Scanner(new File("items.txt"));
@@ -67,6 +68,7 @@ public class Test {
         while (input.hasNextLine()) {
             bag.insert(input.nextLine());
         }
+        input.close();
     }
 
     /**
