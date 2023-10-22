@@ -1,28 +1,14 @@
+package Expression;
 import java.util.Stack;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String expression = "a-(b+c*d)/e";
+        // String expression = "a-(b+c*d)/e";((A + (B * C)) + D)
+        String expression = "D + C * B + A";
         String postfixString = evaluateInfixToPostfix(expression);
         System.out.println("Infix: " + expression);
         System.out.println("Postfix: " + postfixString);
     }
-
-    // public static String evaluatePrefix(String expression) {
-    // char[] stack = new char[20];
-    // String postfixString = new String();
-
-    // for (int i = 0; i < expression.length(); i++) {
-    // char token = stack[i];
-    // if (token == '('||token == ')'||token == '*' || token == '/' || token == '+'
-    // || token == '-') {
-    // String operand1 =
-
-    // }else if (token > 96 || token < 123) {
-    // postfixString += token;
-    // }
-    // }
-    // }
 
     public static int precedence(char operator) {
         switch (operator) {
@@ -42,16 +28,18 @@ public class App {
 
         for (int i = 0; i < expression.length(); i++) {
             char token = expression.charAt(i);
-
-            if (Character.isLetter(token)) {
+            if (token == ' ') {
+            } else if (Character.isLetter(token)) {
                 postfixString.append(token);
             } else if (token == '(') {
                 stack.push(token);
             } else if (token == ')') {
-                while (!stack.isEmpty() && stack.peek() != '(') {
-                    postfixString.append(stack.pop());
+                char stackPop = stack.pop();
+                while (stackPop != '(') {
+                    postfixString.append(stackPop);
+                    stackPop = stack.pop();
                 }
-                stack.pop(); // Pop the opening parenthesis
+                // Pop the opening parenthesis
             } else {
                 while (!stack.isEmpty() && precedence(token) <= precedence(stack.peek())) {
                     postfixString.append(stack.pop());
