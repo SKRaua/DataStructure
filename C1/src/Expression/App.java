@@ -1,10 +1,11 @@
 package Expression;
+
 import java.util.Stack;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // String expression = "a-(b+c*d)/e";((A + (B * C)) + D)
-        String expression = "D + C * B + A";
+        // String expression = "a-(b+c*d)/e"; ((A + (B * C)) + D) a - (b + c)/d + e
+        String expression = "A * ( (B + C) + D)";
         String postfixString = evaluateInfixToPostfix(expression);
         System.out.println("Infix: " + expression);
         System.out.println("Postfix: " + postfixString);
