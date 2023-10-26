@@ -68,8 +68,13 @@ public class GenericStack<E> implements GenericStackInterfere<E> {
      * @throws StackException If the stack is empty.
      */
     public E peek() throws StackException {
-        // The element that was added most recently
-        return list.get(this.size() - 1);
+        if (isEmpty()) {
+            throw new StackException("The stack is empty");
+        } else {
+            // The element that was added most recently
+            return list.get(this.size() - 1);
+        }
+
     }
 
     /**

@@ -1,7 +1,9 @@
 package ExpressionEvaluator;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The Test class of the expression evaluator
@@ -13,24 +15,19 @@ public class Test {
 
     /**
      * Starts the test
+     * 
+     * @throws FileNotFoundException "items.txt" can't be found
      */
-    public static void start() {
-
-        Expression a = new Expression("22 * ( (3 + 4) + 10)");
-        //Expression a = new Expression("A * ( (B + C) + D)");
-        ArrayList<String> b = a.toPostfix();
-        for (String c : b) {
-            System.out.print(c);
-            System.out.print(" ");
-
-        }
+    public static void start() throws FileNotFoundException {
         // A array list that will be used to store a list of Expression objects.
         ArrayList<Expression> expressions = new ArrayList<Expression>();
         // Calls create method with a reference to the list.
         create(expressions);
         // Call display method with a reference to the list.
         display(expressions);
-        // Call otherMethods with a reference to the list for more testing.
+        // Call other methods for more testing.
+        otherExpressionTests(expressions);
+        otherGenericStackTests();
     }
 
     /**
@@ -40,32 +37,83 @@ public class Test {
      * @param expressions a list of Expression objects
      * @throws FileNotFoundException "items.txt" can't be found
      */
-    public static void create(ArrayList<Expression> expressions) {
-        // Create expression objects using data from an input file and store the objects
-        // into the list.
-        // While there are more lines (You will use hasNextLine instead of hasNext.),
-        // Read the next line from the input file as a string, create an expression and
-        // add it to the list.
-        // 7
-        // Note: This will test the constructors.
+    public static void create(ArrayList<Expression> expressions) throws FileNotFoundException {
+        Scanner input = new Scanner(new File("items.txt"));
+        // Create expression objects and store the objects into the list.
+        while (input.hasNextLine()) {
+            expressions.add(new Expression(input.nextLine()));
+        }
     }
 
     /**
      * Prints the list of expressions and the values
      * 
-     * @param expressions
+     * @param expressions The expression array list
      */
     public static void display(ArrayList<Expression> expressions) {
-        // Print the list of expressions as both infix and postfix.
-        // Print the values of the list of expressions.
+        for (Expression expression : expressions) {
+            ArrayList<String> postfixexpression = expression.toPostfix();
+
+            // Prints the list of expressions as both infix and postfix.
+            System.out.println("The infix: " + expression.getInfix());
+            System.out.print("The postfix: ");
+            for (String token : postfixexpression) {
+                System.out.print(token + " ");
+            }
+            System.out.println();
+
+            // Prints the results.
+            System.out.println("The result: " + expression.result());
+            System.out.println();
+        }
     }
 
-    // • There are more methods than what are invoked/tested by the previous three
-    // methods. You may add more
-    // statements in the methods or write additional methods to test the rest of the
-    // methods for all classes. Can you
-    // create another static method that test other operations?
-    public static void otherMethods(ArrayList<Expression> expressions) {
+    /**
+     * Tests other methods in Expression class.
+     * 
+     * @param expressions The expression array list
+     */
+    public static void otherExpressionTests(ArrayList<Expression> expressions) {
+        System.out.println("Other Expression tests: ");
+        Expression expression1 = expressions.get(0);
+        Expression expression2 = new Expression("1 + 1");
+
+        // toString()
+        System.out.println(expression1.toString());
+
+        // setInfix(String)
+        expression1.setInfix("1 + 1");
+        System.out.println("The expression1 has been set to \"1 + 1\".");
+        System.out.println(expression1.toString());
+
+        // equals(Expression)
+        System.out.println(
+                "Are two expressions equal: " + expression1.equals(expression2) + " (\"1 + 1\" \"1 + 1\")");
+        System.out.println("Are two expressions equal: "
+                + expression1.equals(expressions.get(0)) + " (\"1 + 1\" \"2*((3+4)+5)\")");
+        System.out.println();
     }
 
+    /**
+     * Tests other methods in GenericStack class.
+     */
+    public static void otherGenericStackTests() {
+        System.out.println("Other GenericStack tests: ");
+        GenericStack<String> stack = new GenericStack<String>();
+        stack.push("a");
+        stack.push("b");
+        stack.push("c");
+
+        // isEmpty()
+        System.out.println("Is the stack empty: " + stack.isEmpty());
+        // size()
+        System.out.println("Size of the stack: " + stack.size());
+
+        // popAll()
+        stack.popAll();
+        System.out.println("All items have been pop.");
+        System.out.println("Is the stack empty: " + stack.isEmpty());
+        System.out.println("Size of the stack: " + stack.size());
+        System.out.println();
+    }
 }

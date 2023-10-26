@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="queue/arraybased/" kind="src" path="C1/src"/>
+	<classpathentry kind="src" path="C1/src/queue/arraybased"/>
+	<classpathentry kind="src" path="List/src"/>
+	<classpathentry kind="src" path="Project01/src"/>
+	<classpathentry kind="src" path="Project02/src"/>
+	<classpathentry kind="src" path="Project03/src"/>
+	<classpathentry kind="src" path="sfasdf/src"/>
+	<classpathentry kind="output" path="C1/bin"/>
+</classpath>
