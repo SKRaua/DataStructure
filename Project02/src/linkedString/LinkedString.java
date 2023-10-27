@@ -59,25 +59,7 @@ public class LinkedString implements LinkedStringInterface {
      * @param characters the string
      */
     public LinkedString(String string) {
-        if (!string.isEmpty()) {
-            // The head of the linked string if the first char in the array.
-            this.head = new Node<Character>(string.charAt(0));
-            // The current node
-            Node<Character> current = this.head;
-
-            // Traverses string to construct linked String.
-            for (int i = 1; i < string.length(); i++) {
-                // Instances a new node with the parameter of the previous node(the current),
-                // sets the current node's next node using the new node.
-                current.setNext(new Node<Character>(string.charAt(i), null, current));
-                // Moves the current node to the next position.
-                current = current.getNext();
-                count = string.length();
-            }
-        } else {
-            this.head = null;
-            this.count = 0;
-        }
+        this(string.toCharArray());
     }
 
     /**
