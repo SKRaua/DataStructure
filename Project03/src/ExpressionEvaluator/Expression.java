@@ -153,7 +153,14 @@ public class Expression {
      * @return A string representation of this infix expression
      */
     public String toString() {
-        return getClass().getSimpleName() + ": " + infix;
+        // return getClass().getSimpleName() + ": " + infix;
+
+        ArrayList<String> postfixList = toPostfix();
+        String postfix = new String();
+        for (String item : postfixList) {
+            postfix += item + " ";
+        }
+        return getClass().getSimpleName() + " infix: " + infix + " postfix: " + postfix;
     }
 
     /**

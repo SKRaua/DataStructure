@@ -43,6 +43,7 @@ public class Test {
         while (input.hasNextLine()) {
             expressions.add(new Expression(input.nextLine()));
         }
+        input.close();
     }
 
     /**
@@ -90,7 +91,7 @@ public class Test {
         System.out.println(
                 "Are two expressions equal: " + expression1.equals(expression2) + " (\"1 + 1\" \"1 + 1\")");
         System.out.println("Are two expressions equal: "
-                + expression1.equals(expressions.get(0)) + " (\"1 + 1\" \"2*((3+4)+5)\")");
+                + expression1.equals(expressions.get(1)) + " (\"1 + 1\" \"2*(3+(4+5))\")");
         System.out.println();
     }
 
