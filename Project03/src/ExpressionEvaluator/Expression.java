@@ -69,10 +69,7 @@ public class Expression {
 
             if (token.equals(" ")) {
                 // Ignores spaces
-                continue;
-            }
-
-            if (token.equals("(")) {
+            } else if (token.equals("(")) {
                 // Pushes "(" to the stack.
                 operatorStack.push(token);
             } else if (token.equals(")")) {
@@ -119,9 +116,7 @@ public class Expression {
         GenericStack<Integer> operandStack = new GenericStack<Integer>();
 
         // Traverses each token.
-        for (int i = 0; i < postfix.size(); i++) {
-            String token = postfix.get(i);
-
+        for (String token : postfix) {
             if (!"+-*/".contains(token)) {
                 // Pushes the operand to the stack.
                 operandStack.push(Integer.parseInt(token));
@@ -154,7 +149,6 @@ public class Expression {
      */
     public String toString() {
         // return getClass().getSimpleName() + ": " + infix;
-
         ArrayList<String> postfixList = toPostfix();
         String postfix = new String();
         for (String item : postfixList) {

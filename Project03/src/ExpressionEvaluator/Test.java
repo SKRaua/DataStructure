@@ -75,7 +75,7 @@ public class Test {
      * @param expressions The expression array list
      */
     public static void otherExpressionTests(ArrayList<Expression> expressions) {
-        System.out.println("Other Expression tests: ");
+        System.out.println("Other expression tests: ");
         Expression expression1 = expressions.get(0);
         Expression expression2 = new Expression("1 + 1");
 
