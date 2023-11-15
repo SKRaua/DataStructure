@@ -1,0 +1,20 @@
+7122	ICSI	213	Data Structures	Undergraduate
+9797	ICSI	311	Principles of Programming Languages	Undergraduate
+9397	AAFS	209	Black American Music	Undergraduate
+3980	HHPM	645	Global Health	Graduate
+5678	MATH	124	Calculus I	Undergraduate
+2345	CHEM	321	Organic Chemistry	Undergraduate
+8765	PSYC	432	Cognitive Psychology	Graduate
+4321	ECON	201	Microeconomics	Undergraduate
+7890	BIO	540	Molecular Biology	Graduate
+3456	ENGL	215	Introduction to Literature	Undergraduate
+5432	ART	301	Art History	Undergraduate
+8901	SOC	612	Social Research Methods	Graduate
+6543	POLS	410	International Relations	Undergraduate
+2109	HIST	330	World History	Undergraduate
+8769	GEOG	520	Geographic Information Systems	Graduate
+5438	COMM	225	Public Speaking	Undergraduate
+7654	STAT	501	Statistical Analysis	Graduate
+9876	PHYS	201	Physics I	Undergraduate
+3210	MUSC	110	Music Appreciation	Undergraduate
+2349	ECE	455	Digital Signal Processing	Graduate

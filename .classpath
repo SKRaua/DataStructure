@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="Project03/src"/>
 	<classpathentry kind="src" path="sfasdf/src"/>
 	<classpathentry kind="src" path="Lab04/src/Iterator"/>
+	<classpathentry kind="src" path="Project04/src"/>
 	<classpathentry kind="output" path="C1/bin"/>
 </classpath>
