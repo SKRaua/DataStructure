@@ -70,7 +70,12 @@ public class Test {
     public static void testADTClassDatabase(ClassDatabase list) {
         System.out.println("The number of class sections in the list: " + list.number());
         System.out.println();
-        System.out.println("The title of the class with class number 9797: " + list.search(9797).getClassTitle());
+        System.out.println("The class section with class number 9797: ");
+        ClassSection class9797 = list.search(9797);
+        System.out.println(
+                "course subject: " + class9797.getCourseSubject() + " catalog number: " + class9797.getCatalogNumber()
+                        + " class title: " + class9797.getClassTitle() + " level: " + class9797.getLevel());
+
         System.out.println();
 
         System.out.println("Deletes a leaf node class section 2349.");

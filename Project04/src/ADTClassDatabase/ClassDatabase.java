@@ -33,6 +33,8 @@ public class ClassDatabase implements ClassDatabaseInterface {
 
     /**
      * Creates a ClassDatabase with a root class.
+     * 
+     * @param rootClass The root of the binary search tree
      */
     public ClassDatabase(ClassSection rootClass) {
         classSections = new BinarySearchTree<ClassSection>(rootClass);
