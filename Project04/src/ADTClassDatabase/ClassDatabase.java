@@ -16,7 +16,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
     /**
      * The class sections
      */
-    private BinarySearchTree<ClassSection> classSections;
+    private BinarySearchTree<ClassSection> classSectionsTree;
 
     /**
      * The total number
@@ -27,7 +27,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      * Creates a default ClassDatabase.
      */
     public ClassDatabase() {
-        classSections = new BinarySearchTree<ClassSection>();
+        classSectionsTree = new BinarySearchTree<ClassSection>();
         number = 0;
     }
 
@@ -37,7 +37,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      * @param rootClass The root of the binary search tree
      */
     public ClassDatabase(ClassSection rootClass) {
-        classSections = new BinarySearchTree<ClassSection>(rootClass);
+        classSectionsTree = new BinarySearchTree<ClassSection>(rootClass);
         number = 1;
     }
 
@@ -47,7 +47,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      * @param newClassSection The new class section to insert
      */
     public void insert(ClassSection newClassSection) {
-        classSections.insert(newClassSection);
+        classSectionsTree.insert(newClassSection);
         number++;
     }
 
@@ -58,7 +58,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      */
     public void delete(int classNumber) {
         ClassSection theClassSection = new ClassSection(classNumber);
-        classSections.delete(theClassSection);
+        classSectionsTree.delete(theClassSection);
         number--;
     }
 
@@ -70,7 +70,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      */
     public ClassSection search(int classNumber) {
         ClassSection theClassSection = new ClassSection(classNumber);
-        return classSections.search(theClassSection);
+        return classSectionsTree.search(theClassSection);
     }
 
     /**
@@ -79,14 +79,14 @@ public class ClassDatabase implements ClassDatabaseInterface {
      * @return if the class sections is empty
      */
     public boolean isEmpty() {
-        return classSections.isEmpty();
+        return classSectionsTree.isEmpty();
     }
 
     /**
      * Removes all nodes from the class sections.
      */
     public void makeEmpty() {
-        classSections.makeEmpty();
+        classSectionsTree.makeEmpty();
         number = 0;
     }
 
@@ -97,7 +97,7 @@ public class ClassDatabase implements ClassDatabaseInterface {
      */
     public LinkedList<ClassSection> sort() {
         LinkedList<ClassSection> sortedClassSections = new LinkedList<>();
-        TreeIterator<ClassSection> iterator = classSections.iterator();
+        TreeIterator<ClassSection> iterator = classSectionsTree.iterator();
         iterator.setInorder();
         while (iterator.hasNext()) {
             sortedClassSections.add(iterator.next());
