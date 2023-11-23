@@ -1,3 +1,5 @@
+package Test;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -108,13 +110,10 @@ public class Test {
         System.out.println("Deletes a leaf node class section 2349.");
         list.delete(2349);
         display(list);
-        System.out.println("Deletes a class section 2345, it has two sub nodes.");
-        list.delete(2345);
-        display(list);
         System.out.println("Deletes a class section 4321, it has one sub node.");
         list.delete(4321);
         display(list);
-        System.out.println("Deletes the root node class section 7122.");
+        System.out.println("Deletes the root node class section 7122.(It has two sub nodes)");
         list.delete(7122);
         display(list);
 
