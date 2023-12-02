@@ -11,7 +11,7 @@ public class ClassSection implements Comparable<ClassSection> {
     /**
      * The class number
      */
-    private int classNumber;
+    private final int classNumber;
 
     /**
      * The course subject

@@ -28,9 +28,9 @@ public interface ClassDatabaseInterface {
      * Searches the class section
      * 
      * @param classNumber the class number to search
-     * @return The class with the class number
+     * @return Is this class present in the classSectionsTree.
      */
-    public ClassSection search(int classNumber);
+    public boolean search(int classNumber);
 
     /**
      * Determines if the class sections is empty.

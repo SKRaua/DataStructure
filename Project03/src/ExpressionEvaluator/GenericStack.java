@@ -3,7 +3,7 @@ package ExpressionEvaluator;
 import java.util.ArrayList;
 
 /**
- * The GenericStack class using an ArrayList
+ * The generic stack class using an ArrayList
  * 
  * @author Xinyang Zhou
  * @version 1.0

@@ -99,11 +99,8 @@ public class Test {
         display(list);
 
         // Tests search().
-        System.out.println("The class section with class number 9797: ");
-        ClassSection class9797 = list.search(9797);
-        System.out.println(
-                "course subject: " + class9797.getCourseSubject() + " catalog number: " + class9797.getCatalogNumber()
-                        + " class title: " + class9797.getClassTitle() + " level: " + class9797.getLevel());
+        System.out.println("Is the class section with class number 9797 in this list: " + list.search(9797));
+        System.out.println("Is the class section with class number 0001 in this list: " + list.search(0001));
         System.out.println();
 
         // Tests delete(). (Deletes elements at different positions.)

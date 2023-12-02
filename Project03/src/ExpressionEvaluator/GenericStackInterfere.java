@@ -1,7 +1,7 @@
 package ExpressionEvaluator;
 
 /**
- * The GenericStackInterfere of the expression evaluator
+ * The Stack interface of the GenericStack class
  * 
  * @author XinYang Zhou
  * @version 1.0
